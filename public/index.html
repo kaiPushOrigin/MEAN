@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="meanApp">
     <head>
         <meta charset="utf-8">
         <title>Mean Basics</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+
     </head>
     <body>
-        <h1>Contact List</h1>
-        <input ng-model="test">
-        {{test}}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"> </script>
+        <div class="container" ng-controller="AppCtrl">
+            <h1>Contact List</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+            </div>
+        </div>
+
+
+        <!-- Angular JS Lib -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"> </script>
+
+        <script src="js/controllers.js"></script>
+
+        <!-- JQuery -->
+        <script src="js/jquery-2.2.2.min.js" charset="utf-8"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
     </body>
 </html>
