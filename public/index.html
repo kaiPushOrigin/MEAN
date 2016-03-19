@@ -24,6 +24,13 @@
                         <th>Contact Number</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr ng-repeat="person in peopleList">
+                        <td>{{person.name}}</td>
+                        <td>{{person.email}}</td>
+                        <td>{{person.number}}</td>
+                    </tr>
+                </tbody>
             </div>
         </div>
 
