@@ -11,14 +11,19 @@ meanApp.controller('AppCtrl', ['$scope','$http', function ($scope, $http) {
 
     refresh(); // load the data initially
 
-
     $scope.addPerson = function() {
         console.log($scope.person);
         $http.post('/contactList', JSON.stringify($scope.person)).success(function(response) {
             console.log(response); // get the response from the server
             refresh();  // live update
         });
+    };
 
-    }
+    $scope.removePerson = function(personID) {
+        console.log(personID);
+        $http.delete('/contactList/' + personID).success(function(response){
+            refresh();
+        }); // in app.js --> /contactList/:id
+    };
 
 }]);

@@ -21,9 +21,18 @@ app.post('/contactList', function(req, res) {
     console.log(JSON.stringify(req.body));
     db.people.insert(req.body, function(err, doc)
     {
-        res.json(doc);
+        res.json(doc); //send the response to the angular controller
     });
-})
+});
+
+app.delete('/contactlist/:personID', function (req, res) {
+  var id = req.params.personID;
+  console.log(id);
+  db.people.remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+      res.json(doc);
+  });
+});
+
 
 app.listen(3000);
 console.log("Server running on port 3000");
