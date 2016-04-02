@@ -26,4 +26,18 @@ meanApp.controller('AppCtrl', ['$scope','$http', function ($scope, $http) {
         }); // in app.js --> /contactList/:id
     };
 
+    $scope.editPerson = function(personID) {
+        console.log(personID);
+        $http.get('/contactList/' + personID).success(function(response){
+            $scope.person = response;
+        }); // in app.js --> /contactList/:id
+    };
+
+    $scope.update = function(personID) {
+        console.log($scope.person._id);
+        $http.put('/contactList/' + $scope.person._id, $scope.person).success(function(response) {
+            refresh();
+        });
+    }
+
 }]);
